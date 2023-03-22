@@ -14,15 +14,16 @@
         :email-address="friend.email"
         :is-favorite="friend.isFavorite"
         @toggle-favorite="toggleFavoriteStatus"
+        @delete="deleteContact"
       ></friend-contact>
     </ul>
   </section>
 </template>
 
 <script>
-import NewFriend from "./components/NewFriend.vue";
+// import NewFriend from "./components/NewFriend.vue";
 export default {
-  components: { NewFriend },
+  // components: { NewFriend },
   data() {
     return {
       friends: [
@@ -49,16 +50,20 @@ export default {
       friendIdentifier.isFavorite = !friendIdentifier.isFavorite;
     },
 
-    addContact(name, phone, email){
+    addContact(name, phone, email) {
       const newFriendContact = {
         id: new Date().toISOString(),
         name: name,
         phone: phone,
         email: email,
-        isFavorite: false
+        isFavorite: false,
       };
-      this.friends.push(newFriendContact)
-    }
+      this.friends.push(newFriendContact);
+    },
+
+    deleteContact(friendId) {
+      this.friends = this.friends.filter((friend) => friend.id !== friendId);
+    },
   },
 };
 </script>
