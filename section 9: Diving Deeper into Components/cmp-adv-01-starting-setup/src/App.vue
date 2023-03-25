@@ -9,11 +9,9 @@
       :info-text="activeUser.description"
       :role="activeUser.role"
     />
-    <course-goals>
-      <template #default="slotsProps">
-        <h2>{{ slotsProps.item }}</h2>
-        <p>{{ slotsProps["another-prop"] }}</p>
-      </template>
+    <course-goals #default="slotsProps">
+      <h2>{{ slotsProps.item }}</h2>
+      <p>{{ slotsProps["another-prop"] }}</p>
     </course-goals>
   </div>
 </template>
