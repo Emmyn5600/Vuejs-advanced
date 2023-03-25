@@ -17,7 +17,9 @@
     <button @click="setSelectedComponent('manage-goals')">Manage Goals</button>
     <!-- <active-goals v-if="setComponent === 'active-goals'"></active-goals>
     <manage-goals v-if="setComponent === 'manage-goals'"></manage-goals> -->
-     <component :is="setComponent"></component>
+    <keep-alive>
+      <component :is="setComponent"></component>
+    </keep-alive>
   </div>
 </template>
 
@@ -36,11 +38,11 @@ export default {
     // UserInfo,
     // CourseGoals,
     ActiveGoals,
-    ManageGoals
+    ManageGoals,
   },
   data() {
     return {
-      setComponent: 'active-goals',
+      setComponent: "active-goals",
       activeUser: {
         name: "Maximilian Schwarzmüller",
         description: "Site owner and admin",
@@ -50,9 +52,9 @@ export default {
   },
   methods: {
     setSelectedComponent(cmp) {
-      this.setComponent = cmp
-    }
-  }
+      this.setComponent = cmp;
+    },
+  },
 };
 </script>
 
