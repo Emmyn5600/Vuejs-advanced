@@ -99,7 +99,7 @@
       </div>
     </div>
     <div class="form-control">
-      <rating-control></rating-control>
+      <rating-control v-model="rating"></rating-control>
     </div>
     <div class="form-control">
       <input
@@ -130,6 +130,7 @@ export default {
       referrer: 'wom',
       interest: [],
       how: null,
+      rating: null,
       confirm: false,
       userNameValidity: 'pending',
     };
@@ -153,6 +154,9 @@ export default {
       console.log('Confirm?');
       console.log(this.confirm);
       this.confirm = false;
+      console.log('Rating');
+      console.log(this.rating);
+      this.rating = null;
     },
     validateInput() {
       if (this.userName === '') {
