@@ -81,7 +81,7 @@ export default {
           },
           body: JSON.stringify({
             name: this.enteredName,
-            rate: this.chosenRating,
+            rating: this.chosenRating,
           }),
         }
       );
