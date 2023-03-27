@@ -8,14 +8,15 @@
         </li>
         <li>
           <!-- <button @click="setActivePage('users-list')">Users</button> -->
-           <router-link to="/users">Users</router-link>
+          <router-link to="/users">Users</router-link>
         </li>
       </ul>
     </nav>
   </header>
 </template>
 
-  // <script>
+//
+<script>
 // export default {
 //   emits: ['set-page'],
 //   methods: {
@@ -63,7 +64,8 @@ a {
 }
 
 a:hover,
-a:active {
+a:active,
+a.active {
   color: #f1a80a;
   border-color: #f1a80a;
   background-color: #1a037e;
