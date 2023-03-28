@@ -27,7 +27,15 @@ const router = createRouter({
         },
       ],
     },
-    { path: '/users', components: { default: UserList, footer: UsersFooter } },
+    {
+      path: '/users',
+      components: { default: UserList, footer: UsersFooter },
+      beforeEnter(to, from, next) {
+        console.log('user-enter');
+        console.log(to, from);
+        next();
+      },
+    },
 
     { path: '/:notFound(.*)', component: NotFound },
   ],
@@ -41,16 +49,16 @@ const router = createRouter({
   },
 });
 
-router.beforeEach(function(to, from, next){
-    console.log('Global beforeEach');
-    console.log(to, from);
-    // if(to.name === 'team-members'){
-    //   next()
-    // }else{
-    //   next({name: 'team-members', params:{ teamId: 't2'}});
-    // }
-    next()
-})
+router.beforeEach(function (to, from, next) {
+  console.log('Global beforeEach');
+  console.log(to, from);
+  // if(to.name === 'team-members'){
+  //   next()
+  // }else{
+  //   next({name: 'team-members', params:{ teamId: 't2'}});
+  // }
+  next();
+});
 
 const app = createApp(App);
 
