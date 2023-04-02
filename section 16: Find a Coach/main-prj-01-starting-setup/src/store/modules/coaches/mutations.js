@@ -1,5 +1,5 @@
 export default {
   coachRegister(state, payload) {
-    state.requests.push(payload);
+    state.coaches.push(payload);
   },
 };
