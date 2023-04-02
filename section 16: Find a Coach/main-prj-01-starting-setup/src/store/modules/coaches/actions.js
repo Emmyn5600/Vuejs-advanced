@@ -30,12 +30,13 @@ export default {
   },
   async loadCoaches(context) {
     const response = await fetch(
-      'https://find-a-coach-6427a-default-rtdb.firebaseio.com/coaches/.json'
+      'https://find-a-coach-6427a-default-rtdb.firebaseio.com/coaches.json'
     );
     const responseData = await response.json();
 
     if (!response.ok) {
-      //...
+      const error = new Error(responseData.message || 'Failed to fetch');
+      throw error;
     }
 
     const coaches = [];
