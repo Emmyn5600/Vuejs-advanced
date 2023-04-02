@@ -43,7 +43,7 @@ export default {
       return this.$store.getters['requests/hasRequests'];
     },
   },
-  create() {
+  created() {
     this.loadRequests();
   },
   methods: {
