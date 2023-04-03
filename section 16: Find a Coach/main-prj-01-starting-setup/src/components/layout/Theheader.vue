@@ -29,7 +29,8 @@ export default {
   },
   methods: {
     logout() {
-      return this.$store.dispatch('logout');
+      this.$store.dispatch('logout');
+      this.$router.replace('/coaches')
     },
   },
 };
