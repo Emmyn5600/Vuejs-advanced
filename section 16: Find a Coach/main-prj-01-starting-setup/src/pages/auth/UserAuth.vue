@@ -101,4 +101,10 @@ textarea:focus {
   background-color: #faf6ff;
   outline: none;
 }
+
+.errors {
+  font-weight: bold;
+  color: red;
+}
+
 </style>
