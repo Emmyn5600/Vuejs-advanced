@@ -72,6 +72,7 @@ textarea {
   width: 100%;
   font: inherit;
   border: 1px solid #ccc;
+  border-radius: 8px;
   padding: 0.15rem;
 }
 

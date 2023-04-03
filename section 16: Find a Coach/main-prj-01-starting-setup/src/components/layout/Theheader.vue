@@ -58,6 +58,7 @@ a:active,
 a:hover,
 a.router-link-active {
   border: 1px solid #f391e3;
+  border-radius: 8px;
 }
 
 h1 {
