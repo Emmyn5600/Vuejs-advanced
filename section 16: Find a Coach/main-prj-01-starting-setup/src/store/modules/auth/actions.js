@@ -10,13 +10,16 @@ export default {
           password: payload.password,
           returnSecureToken: true,
         }),
-      });
-      
+      }
+    );
+
     const responseData = await response.json();
 
     if (!response.ok) {
       console.log(responseData);
-      const error = new Error(responseData.message || 'Failed to authenticate');
+      const error = new Error(
+        responseData.message || 'Failed to authenticate. Check your login data.'
+      );
       throw error;
     }
 
