@@ -1,9 +1,16 @@
 <template>
   <li>
-    <div>
-      <a :href="emailLink">{{ email }}</a>
+    <div class="request-action">
+      <div>
+        <a :href="emailLink">{{ email }}</a>
+        <p>{{ message }}</p>
+      </div>
+
+      <div>
+        <base-button class="approve">Approve</base-button>
+        <base-button class="reject">Reject</base-button>
+      </div>
     </div>
-    <p>{{ message }}</p>
   </li>
 </template>
 
@@ -38,5 +45,18 @@ a:active {
 
 p {
   margin: 0.5rem 0 0 0;
+}
+
+.request-action {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reject {
+  background: rgb(150, 52, 52);
+}
+
+.approve {
+  background: green;
 }
 </style>
