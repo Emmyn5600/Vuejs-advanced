@@ -1,26 +1,33 @@
 <template>
   <section class="container">
-    <h2>{{ userName }}</h2>
+    <h2>{{ uName }}</h2>
   </section>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue';
 
-export default {
-  setup() {
-    const uName = ref('Emmy');
-    setTimeout(function () {
-      uName.value = 'Maestro';
-    }, 2000);
-    return { userName: uName };
-  },
-  // data() {
-  //   return {
-  //     userName: 'Emmy1',
-  //   };
-  // },
-};
+// export default {
+//   setup() {
+//     const uName = ref('Emmy');
+//     setTimeout(function () {
+//       uName.value = 'Maestro';
+//     }, 2000);
+//     return { userName: uName };
+//   },
+//   // data() {
+//   //   return {
+//   //     userName: 'Emmy1',
+//   //   };
+//   // },
+// };
+
+const uName = ref('Emmy')
+
+setTimeout(function(){
+  uName.value = 'Maestro'
+}, 2000);
+
 </script>
 
 <style>
