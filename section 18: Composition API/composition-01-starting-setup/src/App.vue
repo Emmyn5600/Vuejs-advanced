@@ -3,37 +3,48 @@
     <h2>{{ user.name }}</h2>
     <p>{{ user }}</p>
     <h3>{{ user.age }}</h3>
+    <button @click="setAge">Change Age</button>
     <!-- <button @click="count++">{{ count }}</button> -->
   </section>
 </template>
 
 <script>
-// import { ref } from 'vue';
-import { reactive } from 'vue'
+import { reactive } from 'vue';
 
 export default {
   setup() {
-    
-
+    // const uAge = ref(23)
     const user = reactive({
       name: 'Emmy',
-      age: 24
-    })
+      age: 24,
+    });
 
-    setTimeout(function () {
-      // uName.value = 'Cool';
-      // uAge.value = '30' 
-      user.name = 'Maestro';
-      user.age = 30
-    }, 2000);
+    const setNewAge = () => {
+      user.age = 32;
+    };
 
-    return { user:user };
+    // console.log(uAge, user);
+
+    // setTimeout(function () {
+    //   // uName.value = 'Cool';
+    //   // uAge.value = '30'
+    //   user.name = 'Maestro';
+    //   user.age = 30
+    // }, 2000);
+
+    return { user: user, setAge: setNewAge };
   },
   // data() {
   //   return {
   //     userName: 'Emmy1',
+  //  age : 31
   //   };
   // },
+  // methods:{
+  //   setNewAge(){
+  //     this.age = 32
+  //   }
+  // }
 };
 
 // const uName = ref('Emmy');
