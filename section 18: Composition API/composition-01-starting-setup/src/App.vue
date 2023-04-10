@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 
 export default {
   setup() {
@@ -43,6 +43,13 @@ export default {
        return firstName.value + ' ' + lastName.value
     })
 
+    watch([uAge, userName], function(newValues, oldValues){
+      console.log('Old Value', oldValues[0])
+      console.log('New Value', newValues[0]);
+      console.log('Old Name', oldValues[1])
+      console.log('New Name', newValues[1]);
+    })
+
     // console.log(uAge, user);
 
     // setTimeout(function () {
@@ -63,6 +70,12 @@ export default {
   // methods:{
   //   setNewAge(){
   //     this.age = 32
+  //   }
+  // }
+
+  // watch: {
+  //   age(val){
+  //     console.log(val);
   //   }
   // }
 };
